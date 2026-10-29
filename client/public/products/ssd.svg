@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 450" role="img">
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#e0e7ff"/><stop offset="1" stop-color="#c7d2fe"/></linearGradient>
+<linearGradient id="metal" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f3f4f8"/><stop offset="1" stop-color="#c9ced9"/></linearGradient>
+<linearGradient id="dark" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3b4051"/><stop offset="1" stop-color="#1c2030"/></linearGradient>
+<linearGradient id="screen" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#6d7cff"/><stop offset="1" stop-color="#b06cff"/></linearGradient>
+</defs>
+<rect width="600" height="450" fill="url(#bg)"/>
+<ellipse cx="300" cy="385" rx="190" ry="16" fill="#000" opacity=".12"/>
+
+<rect x="150" y="130" width="300" height="200" rx="28" fill="url(#metal)" stroke="#aab0c0" stroke-width="3"/>
+<rect x="150" y="270" width="300" height="60" rx="0" fill="url(#dark)" opacity=".92"/>
+<path d="M150 302 Q150 330 178 330 L422 330 Q450 330 450 302 L450 270 L150 270Z" fill="url(#dark)"/>
+<text x="185" y="215" font-family="Arial,Helvetica,sans-serif" font-size="54" font-weight="700" fill="#3b4051">1TB</text>
+<text x="187" y="245" font-family="Arial,Helvetica,sans-serif" font-size="18" fill="#6b7280">PORTABLE SSD</text>
+<circle cx="418" cy="160" r="8" fill="#22c55e"/>
+<rect x="255" y="288" width="90" height="26" rx="5" fill="#10131f"/>
+</svg>

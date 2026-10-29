@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 450" role="img">
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fef3c7"/><stop offset="1" stop-color="#fde68a"/></linearGradient>
+<linearGradient id="metal" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f3f4f8"/><stop offset="1" stop-color="#c9ced9"/></linearGradient>
+<linearGradient id="dark" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3b4051"/><stop offset="1" stop-color="#1c2030"/></linearGradient>
+<linearGradient id="screen" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#6d7cff"/><stop offset="1" stop-color="#b06cff"/></linearGradient>
+</defs>
+<rect width="600" height="450" fill="url(#bg)"/>
+<ellipse cx="300" cy="385" rx="190" ry="16" fill="#000" opacity=".12"/>
+
+<path d="M150 265 L420 175 L458 190 L190 285Z" fill="url(#dark)"/>
+<path d="M165 262 L410 182 L440 192 L195 275Z" fill="url(#screen)"/>
+<path d="M255 280 L215 360" stroke="url(#metal)" stroke-width="16" stroke-linecap="round"/>
+<path d="M340 250 L395 360" stroke="url(#metal)" stroke-width="16" stroke-linecap="round"/>
+<path d="M150 292 L215 360 M455 215 L395 360" stroke="#aab0c0" stroke-width="3" fill="none"/>
+<rect x="195" y="352" width="230" height="14" rx="7" fill="#aab0c0"/>
+</svg>

@@ -3,6 +3,7 @@ import { errorMessage, http } from '../api/http';
 import type { Page, Product } from '../api/types';
 import { useCart } from '../cart/CartContext';
 import { Pagination } from '../components/Pagination';
+import { ProductImage } from '../components/ProductImage';
 import { useToast } from '../components/Toasts';
 import { formatMoney } from '../utils/money';
 
@@ -87,7 +88,7 @@ export function Products() {
           const soldOut = product.stock <= 0;
           return (
             <article key={product.id} className="card product">
-              {product.imageUrl ? <img src={product.imageUrl} alt="" loading="lazy" /> : <div className="img-placeholder" aria-hidden />}
+              <ProductImage src={product.imageUrl} name={product.name} />
               <span className="muted small">{product.category}</span>
               <h3>{product.name}</h3>
               <p className="muted small clamp">{product.description}</p>

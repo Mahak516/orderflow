@@ -53,3 +53,14 @@ input, select, textarea { font: inherit; color: inherit; background: var(--surfa
 .toasts { position: fixed; right: 16px; bottom: 16px; display: flex; flex-direction: column; gap: 8px; z-index: 50; }
 .toast { background: var(--text); color: var(--bg); padding: 10px 14px; border-radius: 8px; box-shadow: 0 4px 16px rgb(0 0 0 / .25); }
 .toast-error { background: var(--danger); color: #fff; } .toast-success { background: var(--ok); color: #fff; }
+.img-placeholder { display: grid; place-items: center; font-size: 2.2rem; font-weight: 700; color: var(--muted); }
+.chat { position: fixed; left: 16px; bottom: 16px; z-index: 40; display: flex; flex-direction: column; gap: 8px; align-items: flex-start; }
+.chat-panel { width: min(360px, calc(100vw - 32px)); margin: 0; display: flex; flex-direction: column; gap: 8px; box-shadow: 0 8px 28px rgb(0 0 0 / .25); }
+.chat-log { max-height: 340px; overflow-y: auto; display: flex; flex-direction: column; gap: 8px; }
+.bubble { padding: 8px 12px; border-radius: 12px; max-width: 92%; }
+.bubble p { margin: 0; white-space: pre-wrap; }
+.bubble-user { align-self: flex-end; background: var(--primary); color: var(--primary-text); }
+.bubble-assistant { align-self: flex-start; background: var(--bg); border: 1px solid var(--border); }
+.chat-product { display: grid; grid-template-columns: 48px 1fr auto; gap: 8px; align-items: center; margin-top: 8px; }
+.chat-product img, .chat-product .img-placeholder { width: 48px; height: 48px; aspect-ratio: 1; font-size: 1.2rem; }
+.chat-form { display: flex; gap: 8px; } .chat-form input { flex: 1; min-width: 0; }

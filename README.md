@@ -16,6 +16,7 @@ A full-stack order and inventory platform: customers browse a catalogue and plac
 - **Order state machine:** `pending → paid → shipped → delivered`, plus `cancelled` (restores stock exactly once). Transitions are compare-and-swap, so two admins cannot race.
 - **Real time:** Socket.IO with JWT handshake auth. Customers see their order change status live; admins get new-order alerts and a live dashboard.
 - **Analytics:** MongoDB aggregation pipelines (revenue per day, status breakdown, top products, low stock) shown with Recharts.
+- **AI shopping assistant (optional):** a chat widget where a logged-in customer describes what they want and gets product suggestions with an Add button. The server sends the live catalogue to an LLM (Google Gemini on a free key, or Claude), asks for JSON, and then **validates every returned product id against the database**, so the model can never show a product that does not exist. Login required, rate limited (10/min), 500 token cap, and provider errors are never forwarded to the browser. It is fully switched off (and hidden) unless `GEMINI_API_KEY` or `ANTHROPIC_API_KEY` is set. Tests mock the provider, so CI needs no key and costs nothing.
 - **Security basics:** helmet, CORS with credentials, rate limiting, Zod validation on every input, bcrypt, a generic login error (no account enumeration). Money is stored as integer minor units, never floats.
 
 ## Run with Docker
@@ -44,6 +45,19 @@ cd client
 npm install
 npm run dev               # http://localhost:5173
 ```
+
+### Turning on the AI assistant
+
+Add a key to `server/.env` and restart the server. Never commit the key (`.env` is git-ignored).
+
+```
+# Free: get a key at https://aistudio.google.com/app/apikey
+GEMINI_API_KEY=your-key-here
+# or paid:
+ANTHROPIC_API_KEY=your-key-here
+```
+
+Free Gemini keys have small rate limits and, outside the EU/UK/Switzerland, Google may use free-tier prompts for training, so do not type personal data into the chat.
 
 ## Tests
 
@@ -75,4 +89,5 @@ client/src
 - **Why not MongoDB transactions?** They need a replica set. Atomic conditional updates plus rollback give the same no-oversell guarantee on a single node and are easy to test.
 - **Why keep the access token in memory?** A token in `localStorage` can be stolen by any XSS. In memory it disappears on refresh, and the httpOnly cookie silently gets a new one.
 - **Why a 10 second reuse window on refresh tokens?** Two browser tabs can refresh at the same moment; without a grace window the second one would look like token theft.
-- **Known limits:** payment is simulated, there is no email, and the Socket.IO server is single-instance (scaling out needs the Redis adapter).
+- **Why validate the model's output?** An LLM can invent ids or return malformed text. The server parses defensively, drops unknown ids, and falls back to plain text, so a bad answer degrades gracefully instead of breaking the page.
+- **Known limits:** demo product pictures are simple illustrations bundled in `client/public/products` (admins can set any image URL per product); the assistant sees at most 100 products; payment is simulated, there is no email, and the Socket.IO server is single-instance (scaling out needs the Redis adapter).

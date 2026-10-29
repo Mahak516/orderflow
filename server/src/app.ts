@@ -7,6 +7,7 @@ import morgan from 'morgan';
 import { config } from './config';
 import { errorHandler, notFound } from './middleware/error';
 import { analyticsRouter } from './routes/analytics';
+import { assistantRouter, assistantStatusRouter } from './routes/assistant';
 import { authRouter } from './routes/auth';
 import { ordersRouter } from './routes/orders';
 import { productsRouter } from './routes/products';
@@ -33,6 +34,8 @@ export function createApp() {
   app.use('/api/products', productsRouter);
   app.use('/api/orders', ordersRouter);
   app.use('/api/analytics', analyticsRouter);
+  app.use('/api/assistant/status', assistantStatusRouter);
+  app.use('/api/assistant', assistantRouter);
 
   app.use(notFound);
   app.use(errorHandler);

@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 450" role="img">
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#cffafe"/><stop offset="1" stop-color="#a5f3fc"/></linearGradient>
+<linearGradient id="metal" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f3f4f8"/><stop offset="1" stop-color="#c9ced9"/></linearGradient>
+<linearGradient id="dark" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3b4051"/><stop offset="1" stop-color="#1c2030"/></linearGradient>
+<linearGradient id="screen" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#6d7cff"/><stop offset="1" stop-color="#b06cff"/></linearGradient>
+</defs>
+<rect width="600" height="450" fill="url(#bg)"/>
+<ellipse cx="300" cy="385" rx="190" ry="16" fill="#000" opacity=".12"/>
+
+<rect x="130" y="150" width="340" height="215" rx="55" fill="url(#dark)"/>
+<rect x="170" y="180" width="260" height="130" rx="30" fill="#2a2f42"/>
+<circle cx="190" cy="205" r="5" fill="#8b91a4"/><circle cx="190" cy="235" r="5" fill="#8b91a4"/><circle cx="190" cy="265" r="5" fill="#8b91a4"/><circle cx="190" cy="295" r="5" fill="#8b91a4"/><circle cx="220" cy="205" r="5" fill="#8b91a4"/><circle cx="220" cy="235" r="5" fill="#8b91a4"/><circle cx="220" cy="265" r="5" fill="#8b91a4"/><circle cx="220" cy="295" r="5" fill="#8b91a4"/><circle cx="250" cy="205" r="5" fill="#8b91a4"/><circle cx="250" cy="235" r="5" fill="#8b91a4"/><circle cx="250" cy="265" r="5" fill="#8b91a4"/><circle cx="250" cy="295" r="5" fill="#8b91a4"/><circle cx="280" cy="205" r="5" fill="#8b91a4"/><circle cx="280" cy="235" r="5" fill="#8b91a4"/><circle cx="280" cy="265" r="5" fill="#8b91a4"/><circle cx="280" cy="295" r="5" fill="#8b91a4"/><circle cx="310" cy="205" r="5" fill="#8b91a4"/><circle cx="310" cy="235" r="5" fill="#8b91a4"/><circle cx="310" cy="265" r="5" fill="#8b91a4"/><circle cx="310" cy="295" r="5" fill="#8b91a4"/><circle cx="340" cy="205" r="5" fill="#8b91a4"/><circle cx="340" cy="235" r="5" fill="#8b91a4"/><circle cx="340" cy="265" r="5" fill="#8b91a4"/><circle cx="340" cy="295" r="5" fill="#8b91a4"/><circle cx="370" cy="205" r="5" fill="#8b91a4"/><circle cx="370" cy="235" r="5" fill="#8b91a4"/><circle cx="370" cy="265" r="5" fill="#8b91a4"/><circle cx="370" cy="295" r="5" fill="#8b91a4"/><circle cx="400" cy="205" r="5" fill="#8b91a4"/><circle cx="400" cy="235" r="5" fill="#8b91a4"/><circle cx="400" cy="265" r="5" fill="#8b91a4"/><circle cx="400" cy="295" r="5" fill="#8b91a4"/>
+<circle cx="300" cy="335" r="12" fill="#22d3ee"/>
+<rect x="215" y="328" width="22" height="14" rx="4" fill="#8b91a4"/>
+<rect x="363" y="328" width="22" height="14" rx="4" fill="#8b91a4"/>
+</svg>

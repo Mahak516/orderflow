@@ -1,6 +1,7 @@
 import { NavLink, Outlet, useNavigate } from 'react-router-dom';
 import { useAuth } from '../auth/AuthContext';
 import { useCart } from '../cart/CartContext';
+import { ChatAssistant } from './ChatAssistant';
 
 export function Layout() {
   const { user, logout } = useAuth();
@@ -55,6 +56,7 @@ export function Layout() {
       <main className="container">
         <Outlet />
       </main>
+      <ChatAssistant />
     </>
   );
 }
