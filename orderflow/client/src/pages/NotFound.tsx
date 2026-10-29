@@ -1,0 +1,10 @@
+import { Link } from 'react-router-dom';
+
+export function NotFound() {
+  return (
+    <>
+      <h1>Page not found</h1>
+      <p className="muted"><Link to="/">Back to the shop</Link></p>
+    </>
+  );
+}

@@ -1,0 +1,33 @@
+# Run everything with:  JWT_SECRET=$(openssl rand -hex 32) docker compose up --build
+services:
+  mongo:
+    image: mongo:7
+    volumes:
+      - mongo-data:/data/db
+    healthcheck:
+      test: ["CMD", "mongosh", "--quiet", "--eval", "db.runCommand({ ping: 1 })"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  api:
+    build: ./server
+    environment:
+      NODE_ENV: production
+      PORT: "4000"
+      MONGODB_URI: mongodb://mongo:27017/orderflow
+      JWT_SECRET: ${JWT_SECRET:?Set JWT_SECRET, e.g. JWT_SECRET=$(openssl rand -hex 32)}
+      CLIENT_ORIGIN: http://localhost:8080
+    depends_on:
+      mongo:
+        condition: service_healthy
+
+  web:
+    build: ./client
+    ports:
+      - "8080:80"
+    depends_on:
+      - api
+
+volumes:
+  mongo-data:
